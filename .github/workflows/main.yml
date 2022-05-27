@@ -1,2 +1,19 @@
-- name: Auto Update
-  uses: chinthakagodawita/autoupdate@v1.6.0
+name: Auto Update
+uses: chinthakagodawita/autoupdate@v1.6.0
+
+on:
+  # This will trigger on all pushes to all branches.
+  push: {}
+  # Alternatively, you can only trigger if commits are pushed to certain branches, e.g.:
+  # push:
+  #   branches:
+  #     - master
+  #     - unstable
+jobs:
+  autoupdate:
+    name: autoupdate
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: docker://chinthakagodawita/autoupdate-action:v1
+        env:
+          GITHUB_TOKEN: '${{ secrets.commit_secret }}'
