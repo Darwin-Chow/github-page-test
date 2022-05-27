@@ -1,43 +1,49 @@
-name: deploy gh-pages
+name: Deploy gh-pages
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     name: Build and deploy gh-pages
     env:
       MY_SECRET   : ${{secrets.commit_secret}}
-      USER_NAME   : githubaction
-      USER_EMAIL  : githubaction@fake.com
-      PUBLISH_DIR : ./dist
+      PUBLISH_DIR : .vuepress/dist
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [10.x]
+
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run: |
-        npm install
-    - name: npm run build
-      run: |
-        npm run gulp m
-        npm run build
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install # will run `yarn install` command
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: build # will run `yarn build` command
     - name: Commit files
       run: |
+        echo ${{secrets.DEPLOY_PASSWORD}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
         cd $PUBLISH_DIR
         git init
-        git config --local user.name $USER_NAME
-        git config --local user.email $USER_EMAIL
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git status
         git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
         git checkout -b gh-pages
         git add --all
         git commit -m "deploy to Github pages"
-        git push origin gh-pages -f
-        echo 🤘 deploy gh-pages complete.
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'gh-pages'
+        force: true
+        directory: '.vuepress/dist'
