@@ -1,6 +1,3 @@
-name: Auto Update
-uses: chinthakagodawita/autoupdate@v1.6.0
-
 on:
   # This will trigger on all pushes to all branches.
   push: {}
