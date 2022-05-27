@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'github-page-test';
+
+  onClick() {
+    alert("Pop out Message!!");
+  }
 }
