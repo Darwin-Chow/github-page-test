@@ -1,9 +1,26 @@
-
-<div class="title">
-  <h3>Hello World</h3>
-</div>
-<div class="link">
-  <button (click)="onClick()">Click Me</button>
-</div>
-<div>
+<div class="BigContainer">
+  <!-- <div class="title">
+    <h3>Hello World</h3>
+  </div>
+  <div class="link">
+    <button (click)="onClick()">Click Me</button>
+  </div> -->
+  <div class="container" *ngIf="isWordReady">
+    <header>
+      <span *ngIf="word_id.trad"> 繁 </span>
+      <span *ngIf="!word_id.trad"> 簡 </span>
+      <button mat-mini-fab color="warn" (click)="toggleLock()">
+        <mat-icon *ngIf="isLocked"> lock </mat-icon>
+        <mat-icon *ngIf="!isLocked"> lock_open </mat-icon>
+      </button>
+    </header>
+    <mat-card class="wordCardFront" (click)="convertWord()">
+      <p> {{ word }} </p>
+    </mat-card>
+    <button mat-mini-fab color="primary" (click)="getRandomWord()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+  <div>
+  </div>
 </div>
