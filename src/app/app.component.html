@@ -17,9 +17,18 @@
     <mat-card class="wordCardFront" (click)="convertWord()">
       <p> {{ word }} </p>
     </mat-card>
-    <button mat-mini-fab color="primary" (click)="getRandomWord()">
-      <mat-icon>refresh</mat-icon>
-    </button>
+    <section class="optionPanel">
+      <button mat-raised-button id="noSimp" (click)="isNoSimp()">
+        <span> 沒有繁/簡體字 </span>
+      </button>
+      <button mat-mini-fab color="primary" (click)="getRandomWord()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </section>
+  </div>
+
+  <div *ngIf="!isWordReady">
+    <mat-spinner></mat-spinner>
   </div>
   <div>
   </div>

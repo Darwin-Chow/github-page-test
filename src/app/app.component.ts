@@ -127,7 +127,7 @@ export class AppComponent {
 
   convertWord() {
     // alert('click');
-    if (this.word_id.trad == 0 && this.isLocked) {
+    if (this.word_id.trad == 0) {
       this.word = this.wordList.trad[this.word_id.id];
       this.word_id.trad = 1;
       // this.word = 'ddd';
@@ -137,6 +137,22 @@ export class AppComponent {
       this.word = this.wordList.simp[this.word_id.id];
       this.word_id.trad = 0;
     }
+  }
+
+  isNoSimp() {
+    if (this.compareWords(this.word_id.id)) {
+      alert("對！");
+    }
+    else {
+      alert("錯！");
+      // present correct answer...
+    }
+
+    this.getRandomWord();
+  }
+
+  compareWords(wordID: number): boolean {
+    return (this.wordList.simp[wordID] === this.wordList.trad[wordID]);
   }
 
   getRandomEle(arr: Array<any>): any {

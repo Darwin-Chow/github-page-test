@@ -95,6 +95,28 @@ div.BigContainer {
       }
     }
 
+    .optionPanel {
+      display: flex;
+      width: auto;
+      height: auto;
+      // align-content: flex-start;
+      // justify-content: space-around;
+      align-items: center;
+      justify-items: space-between;
+      flex-direction: column;
+      margin-bottom: 3%;
+
+      // border: 5px red dotted;
+
+      button {
+        margin: 5%;
+      }
+
+      button#noSimp {
+        margin-bottom: 80%;
+      }
+    }
+
     mat-card.wordCardFront:active {
       background-color: rgba(0, 255, 255, 0.662);
     }
