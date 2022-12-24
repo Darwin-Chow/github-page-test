@@ -1,0 +1,74 @@
+
+<div class="container">
+
+  <section class="leftContainer">
+    <mat-form-field appearance="fill" class="optionForm input">
+      <mat-label>請選取語言</mat-label>
+      <mat-select [(value)]="selected.input">
+        <!-- <mat-option>None</mat-option> -->
+        <mat-option value="繁">繁體中文</mat-option>
+        <mat-option value="簡">簡體中文</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="inputForm" appearance="outline">
+      <mat-label> 內容 </mat-label>
+      <textarea matInput [(ngModel)]="content" (ngModelChange)="onChange($event)"></textarea>
+    </mat-form-field>
+
+  </section>
+
+  <section class="optionsBar">
+    <!-- <p> Hello </p> -->
+
+
+    <button mat-icon-button (click)="reverse()">
+      <mat-icon>swap_horiz</mat-icon>
+    </button>
+
+
+  </section>
+
+  <section class="rightContainer">
+    <mat-form-field appearance="fill" class="optionForm result">
+      <mat-label>請選取語言</mat-label>
+      <mat-select [(value)]="selected.result">
+        <!-- <mat-option>None</mat-option> -->
+        <mat-option value="繁">繁體中文</mat-option>
+        <mat-option value="簡">簡體中文</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card class="wordCardFront">
+      <!-- <textarea matInput [(ngModel)]="translate" readonly>
+
+      </textarea> -->
+      <!-- <ng-container *ngFor="let w of translateArr"> -->
+        <span *ngFor="let w of translateArr" (click)="zoomInDialog(0, w, '100ms', '100ms')"> {{ w }} </span>
+      <!-- </ng-container> -->
+
+      <!-- <span>test</span>
+      <span>test</span> -->
+    </mat-card>
+
+  </section>
+
+
+
+  <!-- <div class="subContainer"> -->
+
+
+    <!-- <button mat-button (click)="translateWords()">
+      <mat-icon >swap_horiz</mat-icon>
+      <span> 轉換 </span>
+    </button> -->
+
+
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label> 轉換 </mat-label>
+      <textarea matInput style="display: none;"></textarea>
+      <p> {{ translate }} </p>
+    </mat-form-field> -->
+  <!-- </div> -->
+</div>

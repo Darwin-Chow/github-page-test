@@ -1,0 +1,29 @@
+<div class="BigContainer">
+  <div class="container" *ngIf="isWordReady">
+    <header>
+      <span *ngIf="word_id.trad"> 繁 </span>
+      <span *ngIf="!word_id.trad"> 簡 </span>
+      <button mat-mini-fab color="warn" (click)="toggleLock()">
+        <mat-icon *ngIf="isLocked"> lock </mat-icon>
+        <mat-icon *ngIf="!isLocked"> lock_open </mat-icon>
+      </button>
+    </header>
+    <mat-card class="wordCardFront" (click)="convertWord()">
+      <p> {{ word }} </p>
+    </mat-card>
+    <section class="optionPanel">
+      <button mat-raised-button id="noSimp" (click)="isNoSimp()">
+        <span> 沒有繁/簡體字 </span>
+      </button>
+      <button mat-mini-fab color="primary" (click)="getRandomWord()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </section>
+  </div>
+
+  <div *ngIf="!isWordReady">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div>
+  </div>
+</div>

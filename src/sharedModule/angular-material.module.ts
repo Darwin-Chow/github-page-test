@@ -19,6 +19,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -43,6 +47,9 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatDialogModule,
 
     ClipboardModule,
   ],
