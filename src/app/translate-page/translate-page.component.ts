@@ -80,7 +80,8 @@ export class TranslatePageComponent implements OnInit {
       }
       else {
 
-        if (this.selected.input == '繁') {
+        // translate to simplied Chinese (result)
+        if (this.selected.result == '簡') {
           let index = this.wordList.trad.findIndex((x: string) => x == w);
 
           if (index != -1) {
@@ -119,6 +120,8 @@ export class TranslatePageComponent implements OnInit {
     this.selected.result = (this.selected.result == '繁')? '簡': '繁';
 
     let tmp = this.content;
+
+    // EDIT: chnage to use trans array
     this.content = this.translate;
     this.translate = tmp;
 
