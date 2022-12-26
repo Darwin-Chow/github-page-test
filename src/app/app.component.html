@@ -2,7 +2,9 @@
   <button mat-icon-button class="example-icon" >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <header id="appTitle">
+    <span> {{ appTitle }} </span>
+  </header>
   <!-- <span class="example-spacer"></span> -->
   <button mat-button class="example-icon favorite-icon" [routerLink]="['/translate']" routerLinkActive="router-link-active" >
     繁簡轉換

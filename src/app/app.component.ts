@@ -20,6 +20,8 @@ import  "../assets/smtp.js";
 })
 export class AppComponent {
 
+  appTitle = '規範漢字學習網'
+
   // ipAddress = '';
   // ipChange: Subject<boolean> = new Subject<boolean>();
 
