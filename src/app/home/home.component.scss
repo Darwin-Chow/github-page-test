@@ -1,0 +1,48 @@
+div.BigContainer {
+  width: auto;
+  height: 100%;
+  padding-top: 5vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+
+  .container {
+    width: 80%;
+    height: 90%;
+    padding: 2%;
+    box-sizing: border-box;
+
+
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+
+    #intro {
+      font-size: large;
+    }
+
+    .headerContainer {
+      // border: red 4px dotted;
+
+      mat-card-title {
+        // border: blue 4px dotted;
+      }
+
+      .mat-card-header-text {
+        margin: 0 ;
+      }
+    }
+
+    mat-card-footer {
+      color: grey;
+
+      div.line-spacer {
+        // flex: 1 1 auto;
+      }
+    }
+  }
+}
+

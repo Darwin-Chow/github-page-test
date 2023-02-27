@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslatePageComponent } from './translate-page/translate-page.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { zoomInDialog } from './translate-page/zoomIn-dialog/zoomIn-dialog';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { zoomInDialog } from './translate-page/zoomIn-dialog/zoomIn-dialog';
     TranslatePageComponent,
     QuizPageComponent,
     zoomInDialog,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

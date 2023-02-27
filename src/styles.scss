@@ -4,7 +4,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @font-face {
   font-family: 'customSimSun';
-  src: url('./assets/zysong.ttf');
+  src: url('./assets/zysong.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
+

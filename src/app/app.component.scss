@@ -3,6 +3,8 @@
   height: 100%;
   padding-top: 5vh;
   box-sizing: border-box;
+
+
 }
 
 #menuBar {
@@ -17,4 +19,8 @@
 #appTitle {
   color: cyan;
   font-family: 'newSimSun';
+}
+
+#appTitle:hover {
+  cursor: pointer;
 }

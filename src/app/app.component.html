@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <header id="appTitle">
-    <span> {{ appTitle }} </span>
+    <span [routerLink]="['/home']"> {{ appTitle }} </span>
   </header>
   <!-- <span class="example-spacer"></span> -->
   <button mat-button class="example-icon favorite-icon" [routerLink]="['/translate']" routerLinkActive="router-link-active" >
@@ -16,5 +16,5 @@
 </mat-toolbar>
 
 <div class="container">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

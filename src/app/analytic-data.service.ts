@@ -78,7 +78,19 @@ export class AnalyticDataService {
       (error) => {
         console.log(error);
         this.ipAddress = "unknown";
-        this.changeIpStatus(true)
+
+        this.http.get("https://ipinfo.io")
+        .subscribe(
+          (data: any) => {
+            console.log("Try retrieving ip: " + data.ip);
+            this.ipAddress = data.ip;
+            this.changeIpStatus(true);
+          },
+          (err) => {
+            console.log("FAiled: " + err);
+            this.changeIpStatus(true);
+          }
+        )
         // return this.getOtherAnalytics();
       }
     );
